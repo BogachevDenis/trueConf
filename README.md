@@ -2,7 +2,7 @@
 ## Запуск проекта:
 Для запуска приложения выполните следующие команды:
 <br>
-$ git clone git@github.com:BogachevDenis/trueConf.git
+$ git clone https://github.com/BogachevDenis/trueConf.git
 <br>
 $ cd trueConf
 <br>
@@ -15,7 +15,7 @@ $ cd trueConf
 $ go test
 #### Покрытие -74.8%
 
-### Примеры запросов для работы с хранилищем
+### Примеры запросов для работы с API
 <li>POST Запрос на добавление новых данных
   <br>
   $ curl -X POST -d '{"name":"ivan"}' http://localhost:8080/user
@@ -28,3 +28,12 @@ $ go test
   <br>
   $ curl -X GET  http://localhost:8080/user/1, где 1 - id пользователя
   <br>
+  <li>PUT запрос на изменение имени пользователя по id
+  <br>
+  $ curl -X PUT -d '{"name":"ivan"}' http://localhost:8080/user/1, где 1 - id пользователя
+  <br>
+  <li>DELETE запрос на удаление пользователя по id
+  <br>
+  $ curl -X DELETE  http://localhost:8080/user/1, где 1 - id пользователя
+  <br>
+  
