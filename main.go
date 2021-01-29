@@ -74,7 +74,6 @@ func createUser(c echo.Context) error{
 		return c.JSON(http.StatusBadRequest, map[string]string{
 			"status": "error",})
 	}
-
 	return c.JSON(http.StatusOK, map[string]string{
 		"status": "ok",})
 }
