@@ -55,9 +55,11 @@ func createUser(c echo.Context) error{
 	err = json.NewDecoder(c.Request().Body).Decode(&user)
 	if err != nil {
 		log.Info("POST Request error ", err)
+		return c.JSON(http.StatusBadRequest, map[string]string{
+			"status": "error",})
 	}
 
-	user.AddId(userList.LastIndex + 1)
+	user.AddId(userList.LastIndex)
 	userList.AddLastIndex(user.Id)
 
 	userList.Users = append(userList.Users, user)
@@ -138,6 +140,8 @@ func updateUser(c echo.Context) error{
 	err = json.NewDecoder(c.Request().Body).Decode(&user)
 	if err != nil {
 		log.Info("PUT Request error ", err)
+		return c.JSON(http.StatusBadRequest, map[string]string{
+			"status": "error",})
 	}
 
 	storageData, err := ioutil.ReadFile(storage)

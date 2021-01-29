@@ -29,7 +29,7 @@ func (ul *UserList) GetUserIndex(id int) (int, error) {
 
 
 func (u *User) AddId(id int) {
-	u.Id = id
+	u.Id = id + 1
 }
 
 func (u *User) GetId() int {
