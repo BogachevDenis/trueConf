@@ -9,5 +9,7 @@ $ cd trueConf
 $ go run main.go
 <br>
 ## Запуск тестов:
+$ cd trueConf
+<br>
 $ go test
-### Покрытие -74.8%
+#### Покрытие -74.8%
